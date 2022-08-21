@@ -22,11 +22,11 @@ export const MainPage = () => {
       getTodoListData(URL)
       .then((data)=>{
         dispatch(addTodoList([...data]))
-        console.log("get data",data)
+        //console.log("get data",data)
 
         let doneData = data.filter((item)=> item.completed === true)
         dispatch(addDoneList([...doneData]))
-        console.log("get done data",doneData)
+        //console.log("get done data",doneData)
 
         let undoneData = data.filter((item)=> item.completed === false)
         dispatch(addUndoneList([...undoneData]))

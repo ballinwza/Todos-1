@@ -20,6 +20,7 @@ ________________________________
 1.  type **__npm install__**  for installing package
 2.  open terminal and type **__npm start__** 
 3.  open second terminal and type **__npm run json-server__**  it will simulation server as local 
+4.  open second terminal and type **__npm run sass__** for scss compiler
 
 ![img](./workshopImages/main-1.png)
 ![img](./workshopImages/add-1.png)

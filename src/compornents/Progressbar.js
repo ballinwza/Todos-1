@@ -29,7 +29,7 @@ export const Progressbar = ({fetchInit}) =>{
     useEffect(()=>{
       calProgress() 
       counting()
-      console.log("Todo is complete", p , "%")
+      //console.log("Todo is complete", p , "%")
       // eslint-disable-next-line 
     },[todos]) 
 
