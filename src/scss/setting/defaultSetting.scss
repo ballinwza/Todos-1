@@ -1,0 +1,45 @@
+:root {
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+/*media qury Size*/
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra: 1200px;
+
+
+h1,h2,h3,h4,p{
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+
+h1 {font-size: 2.8rem; font-weight: 500; }
+h2 {font-size: 2.4rem; font-weight: 500;}
+h3 {font-size: 2rem;}
+h4 {font-size: 1.8rem;}
+p, input {font-size: 1.6rem; font-weight: 400;}
+
+
+$purple: #585292;
+$gray-1:#F5F5F5;
+$gray-2 : #E5E5E5;
+$gray-3:#9796A8;
+$gray-4:#A9A9A9;
+$pink : #E07C7C;
+$pink-light:#EBB9B8;
+$red:#E07C7C;
+$white: #ffffff;
+$black-2: #3B3B3B;
+
+$font-13: 1.3rem;
+$font-14: 1.4rem

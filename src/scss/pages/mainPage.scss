@@ -1,0 +1,57 @@
+$flex-modal-container-padding: 10px 30px; 
+
+.mainpage-container{ 
+    background-color: $gray-2;
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+    padding: 50px 0;
+
+    .modal-container{
+        background-color: $gray-1;
+        position: sticky; 
+        top: 10%;
+        margin: auto;
+        width: 40%;
+        height: auto;
+        padding: 80px;
+        border-radius: 20px;
+
+        .progress-container{
+            background-color: $pink;
+            border-radius: 20px;
+            min-height: 123px;
+            padding: $flex-modal-container-padding;
+            color: $white;
+            display: flex; 
+            flex-wrap: wrap;
+            align-items: center; 
+
+            p{
+                color: $pink-light;
+                align-self: flex-start;
+            }
+        }
+
+        .task-container{ 
+            margin: 15px 0;
+
+            .head{
+                @include d-flex(space-between, center, nowrap)
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $large){
+    .modal-container{
+        width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: $small){
+    .modal-container{
+        width: 70% !important;
+        padding: 40px !important;
+    }
+}

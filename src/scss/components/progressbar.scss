@@ -1,0 +1,15 @@
+.progressbar{
+    position: relative;
+    height: 7.34px;
+    width: 100%; 
+    border-radius: 100px; 
+    background-color: $black-2; 
+
+    .color{
+        position: absolute;
+        background-color: $white; 
+        height: 7.34px;
+        border-radius: 100px; 
+        transition: all .5s ease-out;
+    } 
+} 

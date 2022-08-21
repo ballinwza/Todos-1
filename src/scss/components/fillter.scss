@@ -1,0 +1,65 @@
+@mixin fillbox(){
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
+.fillter{ 
+    padding: 10px;
+    width: 110px;
+    position: relative; 
+
+    div{
+        @include d-flex(space-between, center, nowrap);
+        background-color: $white; 
+        min-height: 29px; 
+        @include fillbox();
+        
+
+        p{
+            font-size: $font-13;
+            user-select: none;
+            &:last-child{
+                @include pointer();
+            }
+            svg{
+                font-size: $font-13;
+                color: black;
+            }
+        }
+    }
+
+    /* ul visibility */
+    .visible{ 
+        display: block
+    }
+
+    ul{
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        z-index: 11;
+        width: 110px;
+        list-style-type: none;
+        margin: 10px 0;
+        padding: 0;
+        user-select: none;
+        cursor: pointer;
+        font-size: $font-14;
+        background-color: $white;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        @include fillbox();
+
+        li {
+            padding: 8px 10px;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+        li:hover {
+            background-color: $purple;
+            color: $white;
+        }
+    }
+
+    
+} 

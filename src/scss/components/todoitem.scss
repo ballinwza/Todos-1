@@ -1,0 +1,129 @@
+
+
+.todo{
+    @include d-flex(center, center, nowrap); 
+    background-color: $white;
+    margin: 15px 0;
+    //padding: 10px;
+    border-radius: 1000px;
+    box-sizing: border-box; 
+
+    .hidden-todo-item{ 
+        display: none;
+    }
+    
+    // flex item type 1
+    &-item{ 
+        position: relative; 
+        display: flex;
+        height: 100%; 
+        width: 100%; 
+        align-content: center;
+        padding: 10px 0;
+
+        //display: $global;
+
+        &:nth-child(odd){ 
+            flex-basis: 5%;
+            justify-content: center;
+        }
+        &:nth-child(2){ 
+            padding: 0 20px;
+            flex-basis: 85%;
+            box-sizing: border-box;
+            justify-content: flex-start;
+        }
+
+        &-list{
+            visibility: collapse;
+            position: absolute;
+            top: 35px;
+            right: 0px;
+            width: 100px;
+            background-color: $white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10; 
+
+            p { 
+                padding: 8px 15px;
+                cursor: pointer;
+                user-select: none;
+                width: fit-content;
+
+                &:last-child{
+                    color: $red;
+                }
+            }
+        }
+
+        .visible-btn{
+            visibility: visible;
+        } 
+    } 
+    
+    
+    // flex item type 2
+    &-group{
+        height: fit-content;
+        width: 100%; 
+        @include d-flex(space-between, center, nowrap); 
+        //@include visibleEditor(false); 
+        display: none;
+        
+
+        input{
+            border: none;
+            outline: none;
+            box-sizing: border-box; 
+            padding-left: 15px;
+        }
+
+        .save {
+            @include d-flex(flex-start, center, nowrap);
+            background-color: $purple;
+            color: $white;
+            height: 0%; 
+            border-radius: 100px; 
+        }
+    }
+
+    .visible-editor{ 
+        //@include visibleEditor(true); 
+        display: flex;
+        padding: 5px; 
+        height: 100%; 
+
+        input{ 
+            width: 70%; 
+        }
+
+        .save{ 
+            padding: 10px 20px;
+            height: 100%; 
+            user-select: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+svg {
+    cursor: pointer;
+    font-size: 2.6rem;
+    color: $gray-3;
+} 
+
+.checked {
+    text-decoration: line-through;
+    color: $gray-4;
+}
+
+
+@media only screen and (max-width: $small){
+    .todo-item{
+        &:nth-child(2){
+            flex-basis: 75% !important;
+        }
+    }
+}

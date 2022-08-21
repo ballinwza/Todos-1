@@ -1,0 +1,346 @@
+:root {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*media qury Size*/
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+p, input {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* Styling Input type=text*/
+input[type=text] {
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  height: 46px;
+  width: 100%;
+  border-radius: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Styling Input type=checkbox */
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  visibility: hidden;
+}
+
+/* Check style when not checekd */
+.checkmark {
+  background-color: #ffffff;
+  border: 2px solid #585292;
+  border-radius: 6px;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
+/* when input was checked */
+.input-container input:checked ~ .checkmark {
+  background-color: #585292;
+}
+
+/* hide check shape container*/
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* show check shape container*/
+.input-container input:checked ~ .checkmark:after {
+  display: inline-block;
+}
+
+.input-container .checkmark:after {
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  transform: rotate(45deg);
+  height: 10px;
+  width: 3px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  margin: 15px 0;
+  border-radius: 1000px;
+  box-sizing: border-box;
+}
+.todo .hidden-todo-item {
+  display: none;
+}
+.todo-item {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  padding: 10px 0;
+}
+.todo-item:nth-child(odd) {
+  flex-basis: 5%;
+  justify-content: center;
+}
+.todo-item:nth-child(2) {
+  padding: 0 20px;
+  flex-basis: 85%;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.todo-item-list {
+  visibility: collapse;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  width: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.todo-item-list p {
+  padding: 8px 15px;
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+}
+.todo-item-list p:last-child {
+  color: #E07C7C;
+}
+.todo-item .visible-btn {
+  visibility: visible;
+}
+.todo-group {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  display: none;
+}
+.todo-group input {
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.todo-group .save {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #585292;
+  color: #ffffff;
+  height: 0%;
+  border-radius: 100px;
+}
+.todo .visible-editor {
+  display: flex;
+  padding: 5px;
+  height: 100%;
+}
+.todo .visible-editor input {
+  width: 70%;
+}
+.todo .visible-editor .save {
+  padding: 10px 20px;
+  height: 100%;
+  user-select: none;
+  cursor: pointer;
+}
+
+svg {
+  cursor: pointer;
+  font-size: 2.6rem;
+  color: #9796A8;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #A9A9A9;
+}
+
+@media only screen and (max-width: 576px) {
+  .todo-item:nth-child(2) {
+    flex-basis: 75% !important;
+  }
+}
+.progressbar {
+  position: relative;
+  height: 7.34px;
+  width: 100%;
+  border-radius: 100px;
+  background-color: #3B3B3B;
+}
+.progressbar .color {
+  position: absolute;
+  background-color: #ffffff;
+  height: 7.34px;
+  border-radius: 100px;
+  transition: all 0.5s ease-out;
+}
+
+.fillter {
+  padding: 10px;
+  width: 110px;
+  position: relative;
+  /* ul visibility */
+}
+.fillter div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  min-height: 29px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+}
+.fillter div p {
+  font-size: 1.3rem;
+  user-select: none;
+}
+.fillter div p:last-child {
+  cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.fillter div p svg {
+  font-size: 1.3rem;
+  color: black;
+}
+.fillter .visible {
+  display: block;
+}
+.fillter ul {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  z-index: 11;
+  width: 110px;
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+  user-select: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+}
+.fillter ul li {
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.fillter ul li:hover {
+  background-color: #585292;
+  color: #ffffff;
+}
+
+.mainpage-container {
+  background-color: #E5E5E5;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  padding: 50px 0;
+}
+.mainpage-container .modal-container {
+  background-color: #F5F5F5;
+  position: sticky;
+  top: 10%;
+  margin: auto;
+  width: 40%;
+  height: auto;
+  padding: 80px;
+  border-radius: 20px;
+}
+.mainpage-container .modal-container .progress-container {
+  background-color: #E07C7C;
+  border-radius: 20px;
+  min-height: 123px;
+  padding: 10px 30px;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mainpage-container .modal-container .progress-container p {
+  color: #EBB9B8;
+  align-self: flex-start;
+}
+.mainpage-container .modal-container .task-container {
+  margin: 15px 0;
+}
+.mainpage-container .modal-container .task-container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 992px) {
+  .modal-container {
+    width: 60% !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal-container {
+    width: 70% !important;
+    padding: 40px !important;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */

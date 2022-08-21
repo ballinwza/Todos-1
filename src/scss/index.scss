@@ -1,0 +1,15 @@
+// Setting
+@import './setting/defaultSetting.scss'; 
+@import './setting/mixin.scss';
+
+// Default UI
+@import './defaultUI/input.scss';
+
+// Components
+@import './components/todoitem.scss';
+@import './components/progressbar.scss'; 
+@import './components/fillter.scss';
+
+// Pages
+@import './pages/mainPage.scss'; 
+
